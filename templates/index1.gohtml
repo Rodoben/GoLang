@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<form  method="GET"action="/listdate">
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="From" name="From">
+  <input type="date" id="To" name="To">
+  <input type="submit">
+</form>
+
+<table style="width:100%">
+  <tr>
+    <th>Car Name</th>
+    <th>Car Amount</th>
+    
+  </tr>
+  <tr>
+  {{range $index,$element:=.}}
+    <td>{{$index}}</td>
+    <td>{{$element}}</td>
+  </tr>
+{{end}}
+</table>
+
+</body>
+</html>
+
+
+
+  
+  
+
+  

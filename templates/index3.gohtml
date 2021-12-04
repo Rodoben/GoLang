@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5e6362;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>A Fancy Table</h1>
+<form  method="GET"action="/listdate">
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="From" name="From">
+  <input type="date" id="To" name="To">
+  <input type="submit">
+</form>
+<table style="width:100%" id="customers">
+  <tr>
+     <th>Car Name</th>
+     <th> From Date </th>
+     <th> To Date </th>
+    <th>Car Amount</th>
+  </tr>
+  <tr>
+  {{range $index,$element:=.}}
+    <td>{{$index}}</td>
+    <td>from date </td>
+    <td>To date </td>
+    <td>{{$element}}</td>
+  </tr>
+{{end}}
+  
+</table>
+
+</body>
+</html>
